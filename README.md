@@ -1,6 +1,21 @@
-# Getting Started with Create React App
+# SnapLine - Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To work with this project you have to create a "utils" folder in your src directory.
+Then create lines.tsx file and paste this code:
+```
+export const lines = [
+{
+  id: 1,
+  stopCode: [100],
+  name: "Example 1",
+},
+{
+  id: 2,
+  stopCode: [101],
+  name: "Example 2",
+},
+]
+```
 
 ## Available Scripts
 
