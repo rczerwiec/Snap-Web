@@ -17,6 +17,14 @@ export const lines = [
 ]
 ```
 
+You also need to include .env file from your main directory
+```
+REACT_APP_BACKEND_URL = http://localhost:5000/
+REACT_APP_TIMER = 3000
+```
+REACT_APP_BACKEND_URL = your api url (waiting for number[])
+REACT_APP_TIMER - how often check your connection (1000 - 1second)
+
 ## Available Scripts
 
 In the project directory, you can run:
