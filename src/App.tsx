@@ -4,7 +4,7 @@ import { lines } from "./utils/lines";
 import axios from "axios";
 
 function App() {
-  const [variables, setVariables] = useState<number[]>([8388608]);
+  const [variables, setVariables] = useState<number[]>([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
