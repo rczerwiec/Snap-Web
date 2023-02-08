@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Diode from "./components/Diode";
 import { lines } from "./utils/lines";
+import axios from "axios";
 
 function App() {
-  const codeFromBackend: number[] = [16777216, 512]; //To będzie szło z backendu
-  const [variables, setVariables] = useState<number[]>([]);
+  const [variables, setVariables] = useState<number[]>([8388608]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setVariables(codeFromBackend);
-      console.log("hi");
+      axios.get("http://localhost:9999/").then((res) => {
+        setVariables(res.data);
+      });
     }, 1000);
 
     return () => clearInterval(interval);
@@ -17,7 +18,7 @@ function App() {
 
   const renderDiode = lines.map((_, i) => {
     let returned;
-    codeFromBackend.forEach((line) => {
+    variables.forEach((line) => {
       _.stopCode.forEach((x) => {
         if (x === line) {
           returned = (
@@ -50,7 +51,6 @@ function App() {
   return (
     <div>
       <header className="max-sm:m-10 sm:m-20 max-sm:p-5 sm:p-10 bg-gray-200 rounded-xl shadow-md">
-        {variables}
         <h1 className="text-center text-3xl m-4">SnapLine - Web</h1>
         {renderDiode}
       </header>
