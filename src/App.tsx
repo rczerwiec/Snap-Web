@@ -8,10 +8,10 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      axios.get("http://localhost:9999/").then((res) => {
+      axios.get(process.env.REACT_APP_BACKEND_URL!).then((res) => {
         setVariables(res.data);
       });
-    }, 1000);
+    }, parseInt(process.env.REACT_APP_TIMER!));
 
     return () => clearInterval(interval);
   },[]);
