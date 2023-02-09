@@ -19,7 +19,7 @@ function Diode({index, name, status, stopCode} : IProps) {
 
   return (
     <div className="flex justify-between my-2 border-b-2 border-indigo-200">
-      <span className="text-2xl text-ellipsis overflow-hidden m-2">{index} - {name}</span>
+      <span className="text-2xl text-ellipsis overflow-hidden m-2">{name}</span>
       <img className="w-8 h-8 mx-2" src={diode} alt="Dioda"></img>
     </div>
   );
